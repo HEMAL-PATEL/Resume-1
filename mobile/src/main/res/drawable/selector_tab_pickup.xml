@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 選択状態の選択肢が押されたとき -->
+    <item android:drawable="@drawable/shape_tab_pickup_grey" android:state_pressed="true"/>
+    <!-- 選択されているとき -->
+    <item android:drawable="@drawable/shape_tab_pickup" android:state_checked="true"/>
+    <!-- 選択されていない選択肢にフォーカスがあたったとき -->
+    <item android:drawable="@drawable/shape_tab_pickup_grey" android:state_checked="false" android:state_focused="true" android:state_pressed="false"/>
+    <!-- 選択されていない選択肢のデフォルト状態 -->
+    <item android:drawable="@drawable/shape_tab_pickup_grey" android:state_checked="false"/>
+
+</selector>

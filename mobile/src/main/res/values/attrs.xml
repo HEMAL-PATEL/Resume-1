@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NameWithFuriganaWidget">
+        <attr name="name_furigana" format="string" />
+        <attr name="name_romanji" format="string" />
+    </declare-styleable>
+    
+    <declare-styleable name="ResumeSampleProject">
+        <attr name="project_name" format="string" />
+        <attr name="project_url" format="string" />
+        <attr name="project_cover" format="reference" />
+    </declare-styleable>
+
+</resources>

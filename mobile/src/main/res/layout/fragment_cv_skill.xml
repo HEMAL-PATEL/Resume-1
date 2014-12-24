@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<im.ene.lab.resume.widgets.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_scroll"
+    android:layout_width="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/content_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/view_header_placeholder" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="12dp"
+            android:paddingStart="12dp"
+            android:singleLine="true"
+            android:text="Rated by Level (estimate)"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/tool_bar_want"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="4dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.382"
+                android:gravity="center_vertical|right"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="Java"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.618"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="8dp"
+                android:text="Intermediate"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/tool_bar_want"
+            android:orientation="horizontal"
+            android:padding="4dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.382"
+                android:gravity="center_vertical|right"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="Android"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.618"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:text="Intermediate"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="#8019adc2"
+            android:orientation="horizontal"
+            android:padding="4dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.382"
+                android:gravity="center_vertical|right"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="UX/UI"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.618"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:text="Beginning"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/bar_background_2"
+            android:orientation="horizontal"
+            android:padding="4dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.382"
+                android:gravity="center_vertical|right"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="Web design"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.618"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:text="Beginning"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/beautiful_orange"
+            android:orientation="horizontal"
+            android:padding="4dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.382"
+                android:gravity="center_vertical|right"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="Photography"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.618"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:text="Advance"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="12dp"
+            android:paddingStart="12dp"
+            android:singleLine="true"
+            android:text="Duration of Experience (estimate)"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="250"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Social Life: 25 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="135"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Coding (all languages): 13.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="35"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Java: 3.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="15"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Android: 1.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="5"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="UI/UX: 0.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="5"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Web (front end/basic back end/design): 0.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="25"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Break Dancing: 2.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="55"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Photography: 5.5 years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <!-- just for fun -->
+        <!-- <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:max="250"
+                android:progress="100"
+                android:progressDrawable="@drawable/background_progress_bar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|start"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/bar_background"
+                android:shadowRadius="1"
+                android:singleLine="true"
+                android:text="Book Reading: 10+ years"
+                android:textColor="#f5f5f5"
+                android:textSize="24sp" />
+        </FrameLayout> -->
+    </LinearLayout>
+
+</im.ene.lab.resume.widgets.ObservableScrollView>

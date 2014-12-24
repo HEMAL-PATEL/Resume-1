@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<im.ene.lab.resume.widgets.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/content_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/view_header_placeholder" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="6sp"
+            android:padding="8dp"
+            android:text="@string/very_long_letter"
+            android:textColor="#3e3639" />
+    </LinearLayout>
+
+</im.ene.lab.resume.widgets.ObservableScrollView>

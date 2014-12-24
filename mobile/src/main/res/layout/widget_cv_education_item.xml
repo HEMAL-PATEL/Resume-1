@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<im.ene.lab.resume.widgets.CustomLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:padding="12dp" >
+
+    <TextView
+        android:id="@+id/text_cv_education_place"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/beautiful_orange" />
+
+    <TextView
+        android:id="@+id/text_cv_education_duration"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/text_cv_education_description"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:autoLink="web"
+        android:textColor="@color/very_dark_grayish_pink" />
+
+    <im.ene.lab.resume.widgets.ResumeAchievementHolder
+        android:id="@+id/cv_achievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </im.ene.lab.resume.widgets.ResumeAchievementHolder>
+
+</im.ene.lab.resume.widgets.CustomLinearLayout>

@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "im.ene.lab.resume"
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        incremental false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'AndroidManifest.xml'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    wearApp project(':wear')
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.google.android.gms:play-services:6.5.87'
+    compile 'com.android.support:recyclerview-v7:21.0.3'
+    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1@aar'
+    compile 'com.afollestad:material-dialogs:0.4.7'
+    compile 'com.balysv:material-ripple:0.9.5-SNAPSHOT@aar'
+    compile('com.astuetz:pagerslidingtabstrip:1.0.1') {
+        exclude module: 'support-v4'
+    }
+    compile 'com.squareup.picasso:picasso:2.4.0'
+}

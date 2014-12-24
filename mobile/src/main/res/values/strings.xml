@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wantedly (L)</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <string name="noboringactionbar_title">Nguyen Hoai Nam</string>
+
+    <!-- add from wantedly -->
+    <string name="action_help">ヘルプ</string>
+    <string name="action_license">ライセンス</string>
+    <string name="action_logout">ログアウト</string>
+    <string name="action_privacy_policy">プライバシーポリシー</string>
+    <string name="action_search">検索</string>
+    <string name="action_settings">設定</string>
+    <string name="action_user_policy">利用規約</string>
+    <string name="app_id">234170156611754</string>
+    <string name="com.crashlytics.android.build_id">61858805-5cee-41ce-babc-846538fa8f20</string>
+    <string name="com_facebook_choose_friends">Choose Friends</string>
+    <string name="com_facebook_dialogloginactivity_ok_button">OK</string>
+    <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
+    <string name="com_facebook_internet_permission_error_title">AndroidManifest Error</string>
+    <string name="com_facebook_loading">Loading...</string>
+    <string name="com_facebook_loginview_cancel_action">Cancel</string>
+    <string name="com_facebook_loginview_log_in_button">Log in with Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Log out</string>
+    <string name="com_facebook_loginview_log_out_button">Log out</string>
+    <string name="com_facebook_loginview_logged_in_as">Logged in as: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Logged in using Facebook</string>
+    <string name="com_facebook_logo_content_description">Facebook Logo</string>
+    <string name="com_facebook_nearby">Nearby</string>
+    <string name="com_facebook_picker_done_button_text">Done</string>
+    <string name="com_facebook_placepicker_subtitle_catetory_only_format">%1$s</string>
+    <string name="com_facebook_placepicker_subtitle_format">%1$s • %2$,d were here</string>
+    <string name="com_facebook_placepicker_subtitle_were_here_only_format">%1$,d were here</string>
+    <string name="com_facebook_requesterror_password_changed">Your Facebook password has changed. Please log into this app again to reconnect your Facebook account.</string>
+    <string name="com_facebook_requesterror_permissions">This app doesn’t have permission to do this. To change permissions, try logging into the app again.</string>
+    <string name="com_facebook_requesterror_reconnect">Please log into this app again to reconnect your Facebook account.</string>
+    <string name="com_facebook_requesterror_relogin">Please log into this app again to reconnect your Facebook account.</string>
+    <string name="com_facebook_requesterror_web_login">Your Facebook account is locked. Please log into www.facebook.com to continue.</string>
+    <string name="com_facebook_usersettingsfragment_log_in_button">Log in…</string>
+    <string name="com_facebook_usersettingsfragment_logged_in">Logged in</string>
+    <string name="com_facebook_usersettingsfragment_not_logged_in">Not logged in</string>
+    <string name="content_description">image</string>
+    <string name="search_hint">キーワードを入力してください</string>
+    <string name="very_long_letter">川崎さんへ\n\n
+この前に邪魔したグエンです。たくさんの楽しい話ができたありがとうございます。その日から１週間、自分にもいろいろな考えがあり、これはフィードバックとも言えますが、僕自分の感想とも言えます。\n\n
+
+どこから始まるべきか分かりませんが、まずは「なぜWantedlyで応募してみたか」ということでいいかなと思います。話した通りに、友達からWantedlyのことが分かるようになりました。そしてWantedlyがやっていることが社会にとても役立つで楽しいと思います。数ヶ月後、僕が学院入試に合格し、学院生になることが決めました。しかしながら、最近いろいろな考えが出てきました。それは「なぜ学院に進むか」、と「自分は何をやりたいか」という(おそらく、有名な)質問は頭の中にあります。研究しながらその考えを持ち続けて、一つ目の質問をちゃんと答えなくて、逆に、「何かをやらなければならない」と思って、僕が学院をやめることを考え始めました。「人々を助けるものを作って、さらにいろいろなことを試してみたい」のがその決定のモチベーションです。その場で、Wantedlyを使って楽しい仕事を探してみました。\n\n
+
+次に、「なぜWantedlyでWantedlyを応募しましたか」ということです。また数ヶ月前に戻っていきます。Wantedlyのことを知って始めたころで、Wantedlyのホームページも見ました。「Why - How - What」という流れで会社を紹介したことが見えました。好きなTEDトークにあった同じことが思い出しまして、「面白いなこの会社」ってその時、僕が思いました。Wantedlyで仕事を探す時に、何か得意なことがある？って最初に考えました。最近、Androidとしか付き合ってない僕は、「Android」というキーワードで探してみました。Wantedlyの募集情報が先に出てきました。そこで、Material Design のことが出て、「Why - How - What 会社」の記憶が戻ってくれて、「やってみたら？」と考えながら応募しました。\n\n
+
+川崎さんと話してから、まずWantedlyがやっていることやWantedlyのこれからやることなどをさらに理解できて、いろいろないい印象が残っています。また、帰る時に他の応募もみて、「これからの"はたらく"を面白くするSNS!を作りたい人Wanted!!」という応募がでました。今までずっとやりたいことですから、Wantedlyに応募することを真剣に考えました。\n\n
+
+次に、「どうすれば良い」あるいは「How」という質問が出てきました。普通の就活でもない、適当なオンライン応募やバイト・インターンの探すことでも全然違いますから、またWantedlyの皆さんが欲しい人材となる必要なものことも自分が分かりません、「How」質問の答えはなかなか難しい。考えると、このアプリを作って、自分のできることなどを入れようと考えました。そして、僕が大学卒業後、Wantedlyに就活する考えに対する意見やWantedlyが欲しい人材の特徴なども教えて頂けるならばと思います。\n\n
+
+次は「What」質問の答えで、僕がWantedlyのOfficialアプリのレソースを使わらせていただき(許可もらっていなくてすみません)、このサンプルが出来ました。\n\n
+
+長くなりましたので、申し訳ありません。このアプリの中に僕のResumeを入れましたので、川崎さんの意見とサンプルに対するコメントなどをお待ちしております。\n\n
+グエン　ホアイ　ナム</string>
+
+</resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:rippleAlpha="0.25"
+    app:rippleColor="#abebf4"
+    android:id="@+id/ripple"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <im.ene.lab.resume.widgets.CustomLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="@integer/weight_pickup"
+            android:orientation="vertical"
+            android:padding="@dimen/list_inner_margin" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_looking_for"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4.0dip"
+                    android:background="@drawable/label_blue_border"
+                    android:paddingBottom="4.0dip"
+                    android:paddingLeft="8.0dip"
+                    android:paddingRight="8.0dip"
+                    android:paddingTop="4.0dip"
+                    android:textColor="@color/theme_primary"
+                    android:textSize="@dimen/text_size_xxsmall" />
+
+                <TextView
+                    android:id="@+id/text_label_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/label_green"
+                    android:paddingBottom="4.0dip"
+                    android:paddingLeft="8.0dip"
+                    android:paddingRight="8.0dip"
+                    android:paddingTop="4.0dip"
+                    android:text="NEW"
+                    android:textColor="@color/body_text_white"
+                    android:textSize="@dimen/text_size_xxsmall"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:paddingTop="4.0dip"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/text_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:textColor="@color/body_text_2"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0" >
+
+            <ImageView
+                android:id="@+id/image_project"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/background_images"
+                android:contentDescription="@string/content_description"
+                android:minHeight="@dimen/height_pickup_image"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8.0dip"
+                android:background="@drawable/label_gray"
+                android:padding="2.0dip" >
+
+                <ImageView
+                    android:id="@+id/image_support"
+                    android:layout_width="15.0dip"
+                    android:layout_height="10.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="2.0dip"
+                    android:contentDescription="@string/content_description"
+                    android:src="@drawable/ic_support" />
+
+                <TextView
+                    android:id="@+id/text_support_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/image_support"
+                    android:maxLines="1"
+                    android:paddingRight="2.0dip"
+                    android:textColor="@color/body_text_white"
+                    android:textSize="@dimen/text_size_xsmall" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </im.ene.lab.resume.widgets.CustomLinearLayout>
+
+</com.balysv.materialripple.MaterialRippleLayout>

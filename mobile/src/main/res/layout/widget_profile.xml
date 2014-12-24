@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ene="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="12dp"
+    android:background="#ffffff"
+    android:focusableInTouchMode="false"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bar_background_2"
+        android:padding="8dp"
+        android:text="Who I am" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="グエン"
+            ene:name_romanji="Nguyễn" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent" />
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="ホアイ"
+            ene:name_romanji="Hoài" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent" />
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="ナム"
+            ene:name_romanji="Nam" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#e5e5e5" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_circle"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="生" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="1989年08月05日" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#e5e5e5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_circle"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="性" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="男" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bar_background_2"
+        android:padding="8dp"
+        android:text="Where I am" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="〒158-0083" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e5e5e5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="とうきょうと"
+            ene:name_romanji="東京都" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent" />
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="せたがやく"
+            ene:name_romanji="世田谷区" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent" />
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="おくさわ 1-36-4"
+            ene:name_romanji="奥沢 1-36-4" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e5e5e5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="だいいちほわいとはうす"
+            ene:name_romanji="第一ホワイトハウス" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent" />
+
+        <im.ene.lab.resume.widgets.NameWithFuriganaWidget
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            ene:name_furigana="201ごうしつ"
+            ene:name_romanji="201号室" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bar_background_2"
+        android:padding="8dp"
+        android:text="How to contact me" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:paddingRight="8dp"
+            android:singleLine="true"
+            android:text="携帯電話"
+            android:textColor="#3e3639" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#e5e5e5" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.8"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="8dp"
+            android:singleLine="true"
+            android:text="090-1793-3740"
+            android:textColor="#3e3639" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e5e5e5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:paddingRight="8dp"
+            android:singleLine="true"
+            android:text="E-mail"
+            android:textColor="#3e3639" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#e5e5e5" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.8"
+            android:autoLink="email"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="8dp"
+            android:singleLine="true"
+            android:text="mr.nguyenhoainam@gmail.com"
+            android:textColor="#3e3639" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bar_background_2"
+        android:padding="8dp"
+        android:text="Me, else where" />
+
+    <im.ene.lab.resume.widgets.ObservableHorizontalScrollView
+        android:id="@+id/social_buttons_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12.0dip"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <im.ene.lab.resume.widgets.SocialButtonWidget
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </im.ene.lab.resume.widgets.ObservableHorizontalScrollView>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bar_background_2"
+        android:padding="8dp"
+        android:text="What I created (part of)" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="#e5e5e5" />
+
+    <im.ene.lab.resume.widgets.ResumeSampleProject
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ene:project_cover="@drawable/csn"
+        ene:project_name="(Android) CSN - Music Player"
+        ene:project_url="http://tmblr.co/ZFru_x1WHSkx0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="#e5e5e5" />
+
+    <im.ene.lab.resume.widgets.ResumeSampleProject
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ene:project_cover="@drawable/nhanam"
+        ene:project_name="(Android) Nhanam - online bookstore"
+        ene:project_url="http://tmblr.co/ZFru_x1WHPRZ2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="#e5e5e5" />
+
+    <im.ene.lab.resume.widgets.ResumeSampleProject
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ene:project_cover="@drawable/leontec"
+        ene:project_name="(Android) Apps released at Leontec"
+        ene:project_url="https://play.google.com/store/search?q=leontec" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="#e5e5e5" />
+
+    <im.ene.lab.resume.widgets.ResumeSampleProject
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ene:project_cover="@drawable/img_nakama"
+        ene:project_name="Photo projects"
+        ene:project_url="http://photo.ene.im" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="#e5e5e5" />
+
+</LinearLayout>

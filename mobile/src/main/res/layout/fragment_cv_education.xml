@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<im.ene.lab.resume.widgets.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/content_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/view_header_placeholder" />
+
+    </LinearLayout>
+
+</im.ene.lab.resume.widgets.ObservableScrollView>
