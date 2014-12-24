@@ -4,7 +4,14 @@ import im.ene.lab.resume.R;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.ScrollingMovementMethod;
+import android.text.util.Linkify;
 import android.util.TypedValue;
+import android.widget.TextView;
+
+import com.afollestad.materialdialogs.MaterialDialog;
 
 public class Utils {
 
@@ -17,70 +24,55 @@ public class Utils {
 	}
 
 	public static void showLisence(Context context) {
-//		if (!Utils.isLollipop()) {
-//			final MaterialDialog dialog = new MaterialDialog(context);
-//			dialog.setTitle("Lisence");
-//
-//			TextView mess = new TextView(context);
-//			mess.setMovementMethod(new ScrollingMovementMethod());
-//			mess.setLineSpacing(2f, 1);
-//			mess.setText("As for this application's purpose, I strongly use resume official application's resources, including its color scheme, dimension values, strings values, some item view layouts and its tab bar icon design.\n\n"
-//					+ "In addition, I use Picasso to show beautiful Images efficiently, Android Query to easily inflate and update widgets. ViewPagerIndicator is used in the main ViewPager. This dialog and others were built by a simple Material Dialog library (I would like to recommend another/better one, but not now). RecyclerView's items have awesome ripple effect based on MaterialRippleLayout library. Finally, this app was built based on Google latest AppCompat/Support Library ver 7, build 21 which adds RecyclerView and other awesome features from Android Lollipop.");
-//			dialog.setContentView(mess);
-//
-//			dialog.setPositiveButton("Close", new View.OnClickListener() {
-//
-//				@Override
-//				public void onClick(View v) {
-//					dialog.dismiss();
-//				}
-//			});
-//			dialog.show();
-//		} else {
-//			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//			builder.setTitle("Lisence");
-//			builder.setMessage("As for this application's purpose, I strongly use resume official application's resources, including its color scheme, dimension values, strings values, some item view layouts and its tab bar icon design.\n\n"
-//					+ "In addition, I use Picasso to show beautiful Images efficiently, Android Query to easily inflate and update widgets. ViewPagerIndicator is used in the main ViewPager. This dialog and others were built by a simple Material Dialog library (I would like to recommend another/better one, but not now). RecyclerView's items have awesome ripple effect based on MaterialRippleLayout library. Finally, this app was built based on Google latest AppCompat/Support Library ver 7, build 21 which adds RecyclerView and other awesome features from Android Lollipop.");
-//			builder.setPositiveButton("Close", new OnClickListener() {
-//
-//				@Override
-//				public void onClick(DialogInterface dialog, int which) {
-//					dialog.dismiss();
-//				}
-//			});
-//
-//			builder.create().show();
-//		}
+        String html_license =
+                // Picasso
+                "<p><strong>Picasso<strong></p>"
+                        + "<p>Copyright 2013 Square, Inc."
+                        + "<p>Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>"
+                        + "<p>http://www.apache.org/licenses/LICENSE-2.0</p>"
+                        + "<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>"
+
+                        // Material Dialog
+                        + "<p>Material Dialog</p>"
+                        + "<p>Copyright 2014 drakeet</p>"
+                        + "<p>Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>"
+                        + "<p>http://www.apache.org/licenses/LICENSE-2.0</p>"
+                        + "<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>"
+
+                        // Android PagerSlidingTabStrip
+                        + "<p>Android PagerSlidingTabStrip</p>"
+                        + "<p>Copyright 2013 Andreas Stuetz</p>"
+                        + "<p>Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>"
+                        + "<p>http://www.apache.org/licenses/LICENSE-2.0</p>"
+                        + "<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>"
+
+                        // KenBurnsView
+                        + "<p>Copyright 2013 Flavien Laurent</p>"
+                        + "<p>Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>"
+                        + "<p>http://www.apache.org/licenses/LICENSE-2.0</p>"
+                        + "<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>"
+
+                ;
+        Spanned text_license = Html.fromHtml(html_license);
+        TextView mess = new TextView(context);
+        mess.setMovementMethod(new ScrollingMovementMethod());
+        mess.setText(text_license);
+        mess.setAutoLinkMask(Linkify.WEB_URLS);
+
+        new MaterialDialog.Builder(context)
+                .title("License")
+                .customView(mess)
+                .negativeText("Close")
+                .show();
 	}
 
 	public static void act(Context context) {
-//		if (!Utils.isLollipop()) {
-//			final MaterialDialog dialog = new MaterialDialog(context);
-//			dialog.setTitle("Hi resume <3");
-//			dialog.setMessage("Nam hasn't finished me yet. But I think he wants to. What do you think?\n\nThanks for using me.\nHave a nice day ^^");
-//			dialog.setPositiveButton(context.getString(android.R.string.ok),
-//					new View.OnClickListener() {
-//
-//						@Override
-//						public void onClick(View v) {
-//							dialog.dismiss();
-//						}
-//					});
-//			dialog.show();
-//		} else {
-//			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//			builder.setTitle("Hi resume <3");
-//			builder.setMessage("Nam hasn't finished me yet. But I think he wants to. What do you think?\n\nThanks for using me.\nHave a nice day ^^");
-//			builder.setPositiveButton("Ok", new OnClickListener() {
-//
-//				@Override
-//				public void onClick(DialogInterface dialog, int which) {
-//					dialog.dismiss();
-//				}
-//			});
-//
-//			builder.create().show();
-//		}
+        new MaterialDialog.Builder(context)
+                .title("Hi resume <3")
+                .content("Nam hasn't finished me yet. But I think he wants to. What do you think?\n\nThanks for using me.\nHave a nice day ^^")
+                .negativeText("Close")
+                .show();
+
 	}
 
 	public static int getActionBarHeight(Activity activity) {
