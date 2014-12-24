@@ -2,7 +2,10 @@
 <im.ene.lab.resume.widgets.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content_scroll"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_marginTop="12dp"
+    android:background="#ffffff"
+    android:focusableInTouchMode="false" >
 
     <LinearLayout
         android:id="@+id/content_holder"
@@ -12,6 +15,7 @@
 
         <include layout="@layout/view_header_placeholder" />
 
+        <include layout="@layout/widget_cv_contact" />
     </LinearLayout>
 
 </im.ene.lab.resume.widgets.ObservableScrollView>

@@ -2,8 +2,8 @@
 <im.ene.lab.resume.widgets.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content_scroll"
     android:layout_width="match_parent"
-    android:descendantFocusability="blocksDescendants"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants" >
 
     <LinearLayout
         android:id="@+id/content_holder"
@@ -30,8 +30,8 @@
             android:layout_height="48dp"
             android:layout_marginBottom="12dp"
             android:background="@color/tool_bar_want"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:padding="4dp" >
 
             <TextView
@@ -447,36 +447,6 @@
                 android:textColor="#f5f5f5"
                 android:textSize="24sp" />
         </FrameLayout>
-
-        <!-- just for fun -->
-        <!-- <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="12dp" >
-
-            <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:max="250"
-                android:progress="100"
-                android:progressDrawable="@drawable/background_progress_bar" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical|start"
-                android:gravity="center_vertical"
-                android:paddingLeft="12dp"
-                android:paddingStart="12dp"
-                android:shadowColor="@color/bar_background"
-                android:shadowRadius="1"
-                android:singleLine="true"
-                android:text="Book Reading: 10+ years"
-                android:textColor="#f5f5f5"
-                android:textSize="24sp" />
-        </FrameLayout> -->
     </LinearLayout>
 
 </im.ene.lab.resume.widgets.ObservableScrollView>

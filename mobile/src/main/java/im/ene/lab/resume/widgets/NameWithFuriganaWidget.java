@@ -36,8 +36,7 @@ public class NameWithFuriganaWidget extends LinearLayout {
 	public TextView mRomanji, mFurigana;
 
 	private void init(AttributeSet attrs) {
-		inflate(getContext(),
-				im.ene.lab.resume.R.layout.widget_name_with_furigana, this);
+		inflate(getContext(), R.layout.widget_name_with_furigana, this);
 
 		mRomanji = (TextView) this.findViewById(R.id.romanji);
 		mFurigana = (TextView) this.findViewById(R.id.furigara);

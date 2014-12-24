@@ -1,5 +1,15 @@
 package im.ene.lab.resume;
 
+import im.ene.lab.resume.adapters.ResumePagerAdapter;
+import im.ene.lab.resume.fragments.NavigationDrawerFragment;
+import im.ene.lab.resume.fragments.NavigationDrawerFragment.NavigationDrawerCallbacks;
+import im.ene.lab.resume.utils.Utils;
+import im.ene.lab.resume.widgets.AlphaForegroundColorSpan;
+import im.ene.lab.resume.widgets.CircleTransform;
+import im.ene.lab.resume.widgets.KenBurnsView;
+import im.ene.lab.resume.widgets.ObservableHorizontalScrollView;
+import im.ene.lab.resume.widgets.ObservableScrollView.OnScrollChangedListener;
+import im.ene.lab.resume.widgets.TabHolderScrollingContent;
 import android.annotation.SuppressLint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -8,6 +18,7 @@ import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
@@ -19,21 +30,14 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.squareup.picasso.Picasso;
 
-import im.ene.lab.resume.adapters.ResumePagerAdapter;
-import im.ene.lab.resume.widgets.AlphaForegroundColorSpan;
-import im.ene.lab.resume.widgets.CircleTransform;
-import im.ene.lab.resume.widgets.KenBurnsView;
-import im.ene.lab.resume.widgets.ObservableHorizontalScrollView;
-import im.ene.lab.resume.widgets.ObservableScrollView.OnScrollChangedListener;
-import im.ene.lab.resume.widgets.TabHolderScrollingContent;
-
 @SuppressLint("NewApi")
 public class MyResumeActivity extends ActionBarActivity implements
-        OnScrollChangedListener {
+        OnScrollChangedListener, NavigationDrawerCallbacks {
 
     private int mActionBarTitleColor;
 
@@ -49,9 +53,14 @@ public class MyResumeActivity extends ActionBarActivity implements
     private static PagerSlidingTabStrip mPagerTabs;
     private ResumePagerAdapter mPagerAdapter;
 
+    private DrawerLayout mDrawerLayout;
+    private NavigationDrawerFragment mNavigationDrawerFragment;
+
     private ObservableHorizontalScrollView mSocialButton;
 
     private Toolbar mToolbar;
+
+    private float mLastAlphaRatio;
 
     private TextView text_name, text_short_description, text_location;
 
@@ -63,12 +72,19 @@ public class MyResumeActivity extends ActionBarActivity implements
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         if (mToolbar != null) {
             setSupportActionBar(mToolbar);
-            mToolbar.setLogo(R.drawable.ic_menu_home);
         }
 
         getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // getSupportActionBar().setHomeButtonEnabled(true);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.navigation_drawer);
+
+        // Set up the drawer.
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout,
+                mToolbar);
 
         text_name = (TextView) findViewById(R.id.text_name);
         text_short_description = (TextView) findViewById(R.id.text_short_description);
@@ -107,13 +123,12 @@ public class MyResumeActivity extends ActionBarActivity implements
 
         mHeaderPicture = (KenBurnsView) findViewById(R.id.image_cover);
 
-//		mHeaderPicture.setResourceIds(R.drawable.img_nakama,
-//				R.drawable.facebook_avatar);
+        // mHeaderPicture.setResourceIds(R.drawable.img_nakama,
+        // R.drawable.facebook_avatar);
 
         mHeaderPicture.setResourceIds(R.drawable.img_nakama,
                 R.drawable.facebook_avatar, R.drawable.simple,
-                R.drawable.code_for_fun, R.drawable.tedx,
-                R.drawable.titech);
+                R.drawable.code_for_fun, R.drawable.tedx, R.drawable.titech);
 
         mHeaderLogo = (ImageView) findViewById(R.id.image_avatar);
 
@@ -125,6 +140,7 @@ public class MyResumeActivity extends ActionBarActivity implements
         mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(
                 mActionBarTitleColor);
 
+        mLastAlphaRatio = 0.0f;
         ColorDrawable toolbarColor = new ColorDrawable(getResources().getColor(
                 R.color.tool_bar_want));
         toolbarColor.setAlpha(0);
@@ -158,10 +174,10 @@ public class MyResumeActivity extends ActionBarActivity implements
                     .getTabHolderScrollingContent();
             TabHolderScrollingContent content = fragmentContent
                     .valueAt(position);
-//            content.adjustScroll(
-//                    (int) (mHeaderHeight - mPagerTabs.getHeight() + ViewCompat
-//                            .getTranslationY(mHeader)), mHeaderHeight
-//                            - mPagerTabs.getHeight());
+            content.adjustScroll(
+                    (int) (mHeaderHeight - mPagerTabs.getHeight() + ViewCompat
+                            .getTranslationY(mHeader)), mHeaderHeight
+                            - mPagerTabs.getHeight());
 
         }
 
@@ -191,8 +207,7 @@ public class MyResumeActivity extends ActionBarActivity implements
 
             @Override
             public void run() {
-                mSocialButton.smoothScrollTo(
-                        mSocialButton.getRight(), 0);
+                mSocialButton.smoothScrollTo(mSocialButton.getRight(), 0);
             }
         }, 500);
 
@@ -213,12 +228,92 @@ public class MyResumeActivity extends ActionBarActivity implements
         final float ratio = (float) Math.min(Math.max(t, 0), headerHeight)
                 / headerHeight;
 
-//        ViewCompat.setTranslationY(mHeader,
-//                Math.max(-t, -(mPagerTabs.getHeight() + headerHeight)));
+        mLastAlphaRatio = ratio;
+
+        ViewCompat.setTranslationY(mHeader,
+                Math.max(-t, -(mPagerTabs.getHeight() + headerHeight)));
 
         ColorDrawable toolbarColor = new ColorDrawable(getResources().getColor(
                 R.color.tool_bar_want));
         toolbarColor.setAlpha((int) (ratio * 255));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+            mToolbar.setBackground(toolbarColor);
+        else
+            mToolbar.setBackgroundDrawable(toolbarColor);
+
+        setTitleAlpha(ratio);
+    }
+
+    @Override
+    protected void onPause() {
+
+        // if (!file.exists())
+        // try {
+        // file.createNewFile();
+        // } catch (IOException e1) {
+        // Toast.makeText(this, "false: IO", Toast.LENGTH_SHORT).show();
+        // e1.printStackTrace();
+        // }
+
+		/*
+		 * try { View view = getWindow().getDecorView().getRootView(); //
+		 * view.setDrawingCacheEnabled(true); // Bitmap b =
+		 * view.getDrawingCache().copy(Bitmap.Config.ARGB_8888, // false); //
+		 * view.destroyDrawingCache();
+		 * 
+		 * Toast.makeText(this, view.getWidth() + " | " + view.getHeight(),
+		 * Toast.LENGTH_SHORT).show();
+		 * 
+		 * Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),
+		 * view.getHeight(), Bitmap.Config.ARGB_8888); // crashes when //
+		 * scale_ratio // is 1 Canvas canvas = new Canvas(bitmap);
+		 * view.draw(canvas);
+		 * 
+		 * String file = Environment.getExternalStoragePublicDirectory(
+		 * Environment.DIRECTORY_DCIM).toString() + "/resume.png";
+		 * 
+		 * OutputStream outputStream = new FileOutputStream(new File(file));
+		 * bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+		 * outputStream.flush(); outputStream.close();
+		 * 
+		 * Toast.makeText(this, "success", Toast.LENGTH_SHORT).show(); } catch
+		 * (FileNotFoundException e) { Toast.makeText(this, "false: File",
+		 * Toast.LENGTH_SHORT).show(); e.printStackTrace(); } catch (IOException
+		 * e) { Toast.makeText(this, "false: IO", Toast.LENGTH_SHORT).show();
+		 * e.printStackTrace(); }
+		 */
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
+
+    @Override
+    public void onNavigationDrawerItemSelected(int position) {
+        if (position == 1)
+            Utils.showLisence(this);
+    }
+
+    @Override
+    public void onNavigationPanelOpened() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onNavigationPanelSliding(float slideOffset) {
+        // Toast.makeText(this, slideOffset + "", Toast.LENGTH_SHORT).show();
+
+        ColorDrawable toolbarColor = new ColorDrawable(getResources().getColor(
+                R.color.tool_bar_want));
+
+        float ratio = Math.max(slideOffset, mLastAlphaRatio);
+
+        toolbarColor.setAlpha((int) (ratio * 255));
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
             mToolbar.setBackground(toolbarColor);
         else

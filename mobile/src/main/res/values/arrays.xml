@@ -3,7 +3,6 @@
 
     <string-array name="navigation_title">
         <item>ホーム</item>
-        <item>Resume</item>
         <item>ライセンス</item>
     </string-array>
 

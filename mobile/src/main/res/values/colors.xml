@@ -10,7 +10,7 @@
     <color name="background_message_user">#ffbae6ed</color>
     <color name="background_pickup_gradient_end">#88000000</color>
     <color name="background_pickup_gradient_start">#33000000</color>
-    <color name="background_profile_cover_overlay">#66000000</color>
+    
     <color name="background_profile_tab">#fffafafa</color>
     <color name="background_project_supplement">#ffeeeeee</color>
     <color name="background_project_taglist">#fff5f5f5</color>
@@ -85,4 +85,5 @@
     <color name="main">#63C3FF</color>
     <color name="actionbar_title_color">@android:color/white</color>
 
+    <color name="background_profile_cover_overlay">#66000000</color>
 </resources>
