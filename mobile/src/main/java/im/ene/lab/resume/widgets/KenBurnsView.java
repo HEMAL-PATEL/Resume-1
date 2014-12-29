@@ -4,8 +4,6 @@ import im.ene.lab.resume.R;
 
 import java.util.Random;
 
-import com.squareup.picasso.Picasso;
-
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -16,6 +14,8 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by f.laurent on 21/11/13.

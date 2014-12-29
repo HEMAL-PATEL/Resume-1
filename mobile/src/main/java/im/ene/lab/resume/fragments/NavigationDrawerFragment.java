@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation
@@ -191,6 +192,15 @@ public class NavigationDrawerFragment extends Fragment {
 				getActivity().supportInvalidateOptionsMenu(); // calls
 																// onPrepareOptionsMenu()
 			}
+			
+			@Override
+			public void onDrawerSlide(View drawerView, float slideOffset) {
+				super.onDrawerSlide(drawerView, slideOffset);
+				
+				if (mCallbacks != null)
+					mCallbacks.onNavigationPanelSliding(slideOffset);
+				
+			}
 		};
 
 		// Defer code dependent on restoration of previous instance state.
@@ -290,6 +300,8 @@ public class NavigationDrawerFragment extends Fragment {
 		void onNavigationDrawerItemSelected(int position);
 
 		void onNavigationPanelOpened();
+
+		void onNavigationPanelSliding(float slideOffset);
 	}
 
 	public void closeDrawer() {

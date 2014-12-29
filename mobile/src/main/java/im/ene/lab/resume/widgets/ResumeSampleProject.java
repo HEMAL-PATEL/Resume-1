@@ -1,8 +1,6 @@
 package im.ene.lab.resume.widgets;
 
-import im.ene.lab.resume.R;
 import android.annotation.SuppressLint;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -12,6 +10,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import im.ene.lab.resume.R;
 
 @SuppressLint("NewApi")
 public class ResumeSampleProject extends LinearLayout implements
@@ -100,9 +100,9 @@ public class ResumeSampleProject extends LinearLayout implements
 
 	private void openUrl(String url) {
 		Intent internetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-		internetIntent.setComponent(new ComponentName("com.android.browser",
-				"com.android.browser.BrowserActivity"));
-		internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		getContext().startActivity(internetIntent);
+//		internetIntent.setComponent(new ComponentName("com.android.browser",
+//				"com.android.browser.BrowserActivity"));
+//		internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getContext().startActivity(internetIntent);
 	}
 }

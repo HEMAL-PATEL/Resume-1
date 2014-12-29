@@ -8,10 +8,9 @@
     </style>
 
     <style name="AppTheme.Base.Light" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        -->
+        <item name="colorPrimary">@color/tool_bar_want</item>
+        <item name="colorPrimaryDark">@color/tool_bar_want_dark</item>
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="AppTheme.HasActionBar" parent="Theme.AppCompat.Light">

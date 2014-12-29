@@ -1,5 +1,6 @@
 package im.ene.lab.resume.adapters;
 
+import im.ene.lab.resume.fragments.ResumeContactFragment;
 import im.ene.lab.resume.fragments.ResumeEduFragment;
 import im.ene.lab.resume.fragments.ResumeIntroFragment;
 import im.ene.lab.resume.fragments.ResumeReasonFragment;
@@ -34,7 +35,7 @@ public class ResumePagerAdapter extends SmartFragmentStatePagerAdapter {
 			fragment = ResumeEduFragment.newInstance();
 			break;
 		case 3:
-			fragment = ResumeReasonFragment.newInstance();
+			fragment = ResumeContactFragment.newInstance();
 			break;
 		default:
 			fragment = ResumeIntroFragment.newInstance();
@@ -62,6 +63,8 @@ public class ResumePagerAdapter extends SmartFragmentStatePagerAdapter {
 		return this.mTabHolderScrollingContent;
 	}
 
-	private static final String[] mTitle = { "プロフィル", "スキル", "資格・学歴・職歴", "志望動機" };
+	private static final String[] mTitle = { "自己紹介", "スキル", "資格・学歴・職歴", "個人情報" };
+	// private static final String[] mTitle = { "プロフィル", "スキル", "資格・学歴・職歴",
+	// "志望動機" };
 	// private static final String[] mTitle = { "プロフィル", "スキル", "資格・学歴・職歴" };
 }
