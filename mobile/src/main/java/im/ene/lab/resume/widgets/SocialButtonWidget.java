@@ -71,9 +71,9 @@ public class SocialButtonWidget extends LinearLayout implements OnClickListener 
 
 	private void openUrl(String url) {
 		Intent internetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-		internetIntent.setComponent(new ComponentName("com.android.browser",
-				"com.android.browser.BrowserActivity"));
-		internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//		internetIntent.setComponent(new ComponentName("com.android.browser",
+//				"com.android.browser.BrowserActivity"));
+//		internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		getContext().startActivity(internetIntent);
 	}
 

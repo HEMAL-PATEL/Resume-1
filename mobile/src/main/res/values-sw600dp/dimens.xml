@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">32dp</dimen>
+    <dimen name="activity_vertical_margin">32dp</dimen>
+
+    <!--
+         Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html
+    -->
+    <dimen name="navigation_drawer_width">320dp</dimen>
+    <dimen name="base_horizontal_margin">32.0dip</dimen>
+    <dimen name="box_horizontal_margin">16.0dip</dimen>
+
+    <dimen name="corner_radius">6.0dip</dimen>
+    <dimen name="corner_radius_large">8.0dip</dimen>
+    <dimen name="corner_radius_small">4.0dip</dimen>
+    <dimen name="default_circle_indicator_radius">3.0dip</dimen>
+    <dimen name="default_circle_indicator_stroke_width">1.0dip</dimen>
+    <dimen name="default_line_indicator_gap_width">4.0dip</dimen>
+    <dimen name="default_line_indicator_line_width">12.0dip</dimen>
+    <dimen name="default_line_indicator_stroke_width">1.0dip</dimen>
+    <dimen name="default_title_indicator_clip_padding">4.0dip</dimen>
+    <dimen name="default_title_indicator_footer_indicator_height">4.0dip</dimen>
+    <dimen name="default_title_indicator_footer_indicator_underline_padding">20.0dip</dimen>
+    <dimen name="default_title_indicator_footer_line_height">2.0dip</dimen>
+    <dimen name="default_title_indicator_footer_padding">7.0dip</dimen>
+    <dimen name="default_title_indicator_text_size">15.0dip</dimen>
+    <dimen name="default_title_indicator_title_padding">5.0dip</dimen>
+    <dimen name="default_title_indicator_top_padding">7.0dip</dimen>
+    <dimen name="height_info_image">130.0dip</dimen>
+    <dimen name="height_pickup_image">150.0dip</dimen>
+    <dimen name="height_cv_cover_image">284.0dip</dimen>
+    <dimen name="height_cv_place_holder">320.0dip</dimen>
+    <dimen name="height_project_support">90.0dip</dimen>
+    <dimen name="height_search_image">150.0dip</dimen>
+    <dimen name="height_viewpager_image">200.0dip</dimen>
+    <dimen name="imageview_profile_avatar">56.0dip</dimen>
+    <dimen name="imageview_cv_profile_avatar">80.0dip</dimen>
+    <dimen name="line_spacing">4.0dip</dimen>
+    <dimen name="line_spacing_large">8.0dip</dimen>
+    <dimen name="list_inner_margin">14.0dip</dimen>
+    <dimen name="profile_horizontal_margin">20.0dip</dimen>
+    <dimen name="text_size_large">16.0sp</dimen>
+    <dimen name="text_size_medium">14.0sp</dimen>
+    <dimen name="text_size_small">13.0sp</dimen>
+    <dimen name="text_size_xlarge">18.0sp</dimen>
+    <dimen name="text_size_xsmall">12.0sp</dimen>
+    <dimen name="text_size_xxlarge">20.0sp</dimen>
+    <dimen name="text_size_xxsmall">10.5sp</dimen>
+    <dimen name="toolbar_height">64dp</dimen>
+
+</resources>

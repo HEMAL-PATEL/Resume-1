@@ -80,6 +80,7 @@
     <color name="bar_background">#3e3639</color>
     <color name="bar_background_2">#6619adc2</color>
     <color name="tool_bar_want">#ff19adc2</color>
+    <color name="tool_bar_want_dark">#ff138595</color>
     <color name="material_cyan_a400_80">#8000e5ff</color>
     <color name="post_inner_divier">#cc3e3639</color>
     <color name="main">#63C3FF</color>
