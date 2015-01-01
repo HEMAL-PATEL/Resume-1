@@ -86,5 +86,6 @@
     <color name="main">#63C3FF</color>
     <color name="actionbar_title_color">@android:color/white</color>
 
+    <color name="translucent_statusbar_background">#cc3f51b5</color>
     <color name="background_profile_cover_overlay">#66000000</color>
 </resources>
