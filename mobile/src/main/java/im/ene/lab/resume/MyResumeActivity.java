@@ -9,8 +9,10 @@ import im.ene.lab.resume.widgets.CircleTransform;
 import im.ene.lab.resume.widgets.KenBurnsView;
 import im.ene.lab.resume.widgets.ObservableHorizontalScrollView;
 import im.ene.lab.resume.widgets.ObservableScrollView.OnScrollChangedListener;
+import im.ene.lab.resume.widgets.ScrimInsetsFrameLayout;
 import im.ene.lab.resume.widgets.TabHolderScrollingContent;
 import android.annotation.SuppressLint;
+import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +28,9 @@ import android.text.SpannableString;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -37,12 +42,12 @@ import com.squareup.picasso.Picasso;
 
 @SuppressLint("NewApi")
 public class MyResumeActivity extends ActionBarActivity implements
-        OnScrollChangedListener, NavigationDrawerCallbacks {
+        OnScrollChangedListener, NavigationDrawerCallbacks, ScrimInsetsFrameLayout.OnInsetsCallback {
 
     private int mActionBarTitleColor;
 
     private View mHeader;
-    private static int mHeaderHeight;
+    private static int mHeaderHeight, mActionBarHeight, mStatusBarHeight;
     private KenBurnsView mHeaderPicture;
     private ImageView mHeaderLogo;
 
@@ -59,6 +64,7 @@ public class MyResumeActivity extends ActionBarActivity implements
     private ObservableHorizontalScrollView mSocialButton;
 
     private Toolbar mToolbar;
+    private Window mWindows;
 
     private float mLastAlphaRatio;
 
@@ -72,11 +78,22 @@ public class MyResumeActivity extends ActionBarActivity implements
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         if (mToolbar != null) {
             setSupportActionBar(mToolbar);
+
+            mActionBarHeight = mToolbar.getHeight();
         }
 
         getSupportActionBar().setTitle("");
         // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // getSupportActionBar().setHomeButtonEnabled(true);
+
+        // dealing with status bar:
+        mWindows = getWindow();
+        mWindows.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        mWindows.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        ScrimInsetsFrameLayout scrimInsetsFrameLayout = (ScrimInsetsFrameLayout)
+                findViewById(R.id.capture_insets_frame_layout);
+        scrimInsetsFrameLayout.setOnInsetsCallback(this);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
@@ -145,10 +162,16 @@ public class MyResumeActivity extends ActionBarActivity implements
                 R.color.tool_bar_want));
         toolbarColor.setAlpha(0);
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
             mToolbar.setBackground(toolbarColor);
         else
             mToolbar.setBackgroundDrawable(toolbarColor);
+
+        ColorDrawable statusBarColor = new ColorDrawable(getResources().getColor(R.color.tool_bar_want_dark));
+        statusBarColor.setAlpha(0);
+
+        mWindows.setStatusBarColor(statusBarColor.getColor());
 
         setTitleAlpha(0.0f);
 
@@ -231,7 +254,7 @@ public class MyResumeActivity extends ActionBarActivity implements
         mLastAlphaRatio = ratio;
 
         ViewCompat.setTranslationY(mHeader,
-                Math.max(-t, -(mPagerTabs.getHeight() + headerHeight)));
+                Math.max(-t, -(mPagerTabs.getHeight() + headerHeight - mStatusBarHeight)));
 
         ColorDrawable toolbarColor = new ColorDrawable(getResources().getColor(
                 R.color.tool_bar_want));
@@ -241,54 +264,12 @@ public class MyResumeActivity extends ActionBarActivity implements
         else
             mToolbar.setBackgroundDrawable(toolbarColor);
 
+        ColorDrawable statusBarColor = new ColorDrawable(getResources().getColor(R.color.tool_bar_want_dark));
+        statusBarColor.setAlpha((int) (ratio * 255));
+
+        mWindows.setStatusBarColor(statusBarColor.getColor());
+
         setTitleAlpha(ratio);
-    }
-
-    @Override
-    protected void onPause() {
-
-        // if (!file.exists())
-        // try {
-        // file.createNewFile();
-        // } catch (IOException e1) {
-        // Toast.makeText(this, "false: IO", Toast.LENGTH_SHORT).show();
-        // e1.printStackTrace();
-        // }
-
-		/*
-		 * try { View view = getWindow().getDecorView().getRootView(); //
-		 * view.setDrawingCacheEnabled(true); // Bitmap b =
-		 * view.getDrawingCache().copy(Bitmap.Config.ARGB_8888, // false); //
-		 * view.destroyDrawingCache();
-		 * 
-		 * Toast.makeText(this, view.getWidth() + " | " + view.getHeight(),
-		 * Toast.LENGTH_SHORT).show();
-		 * 
-		 * Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),
-		 * view.getHeight(), Bitmap.Config.ARGB_8888); // crashes when //
-		 * scale_ratio // is 1 Canvas canvas = new Canvas(bitmap);
-		 * view.draw(canvas);
-		 * 
-		 * String file = Environment.getExternalStoragePublicDirectory(
-		 * Environment.DIRECTORY_DCIM).toString() + "/resume.png";
-		 * 
-		 * OutputStream outputStream = new FileOutputStream(new File(file));
-		 * bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
-		 * outputStream.flush(); outputStream.close();
-		 * 
-		 * Toast.makeText(this, "success", Toast.LENGTH_SHORT).show(); } catch
-		 * (FileNotFoundException e) { Toast.makeText(this, "false: File",
-		 * Toast.LENGTH_SHORT).show(); e.printStackTrace(); } catch (IOException
-		 * e) { Toast.makeText(this, "false: IO", Toast.LENGTH_SHORT).show();
-		 * e.printStackTrace(); }
-		 */
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
     }
 
     @Override
@@ -319,6 +300,24 @@ public class MyResumeActivity extends ActionBarActivity implements
         else
             mToolbar.setBackgroundDrawable(toolbarColor);
 
+        ColorDrawable statusBarColor = new ColorDrawable(getResources().getColor(R.color.tool_bar_want_dark));
+        statusBarColor.setAlpha((int) (ratio * 255));
+
+        mWindows.setStatusBarColor(statusBarColor.getColor());
+
         setTitleAlpha(ratio);
+    }
+
+    @Override
+    public void onInsetsChanged(Rect insets) {
+        mStatusBarHeight = insets.top;
+        Toolbar toolbar = mToolbar;
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)
+                toolbar.getLayoutParams();
+        lp.topMargin = insets.top;
+        int top = insets.top;
+        insets.top += mToolbar.getHeight();
+        toolbar.setLayoutParams(lp);
+        insets.top = top;
     }
 }
