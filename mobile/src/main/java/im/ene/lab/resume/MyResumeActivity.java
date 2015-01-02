@@ -1,5 +1,6 @@
 package im.ene.lab.resume;
 
+import com.crashlytics.android.Crashlytics;
 import im.ene.lab.resume.adapters.ResumePagerAdapter;
 import im.ene.lab.resume.fragments.NavigationDrawerFragment;
 import im.ene.lab.resume.fragments.NavigationDrawerFragment.NavigationDrawerCallbacks;
@@ -39,6 +40,7 @@ import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.squareup.picasso.Picasso;
+import io.fabric.sdk.android.Fabric;
 
 @SuppressLint("NewApi")
 public class MyResumeActivity extends ActionBarActivity implements
@@ -74,6 +76,7 @@ public class MyResumeActivity extends ActionBarActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_cv);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         if (mToolbar != null) {
@@ -171,7 +174,8 @@ public class MyResumeActivity extends ActionBarActivity implements
         ColorDrawable statusBarColor = new ColorDrawable(getResources().getColor(R.color.tool_bar_want_dark));
         statusBarColor.setAlpha(0);
 
-        mWindows.setStatusBarColor(statusBarColor.getColor());
+        if (Utils.isLollipop())
+            mWindows.setStatusBarColor(statusBarColor.getColor());
 
         setTitleAlpha(0.0f);
 
@@ -267,7 +271,8 @@ public class MyResumeActivity extends ActionBarActivity implements
         ColorDrawable statusBarColor = new ColorDrawable(getResources().getColor(R.color.tool_bar_want_dark));
         statusBarColor.setAlpha((int) (ratio * 255));
 
-        mWindows.setStatusBarColor(statusBarColor.getColor());
+        if (Utils.isLollipop())
+            mWindows.setStatusBarColor(statusBarColor.getColor());
 
         setTitleAlpha(ratio);
     }
@@ -303,7 +308,8 @@ public class MyResumeActivity extends ActionBarActivity implements
         ColorDrawable statusBarColor = new ColorDrawable(getResources().getColor(R.color.tool_bar_want_dark));
         statusBarColor.setAlpha((int) (ratio * 255));
 
-        mWindows.setStatusBarColor(statusBarColor.getColor());
+        if (Utils.isLollipop())
+            mWindows.setStatusBarColor(statusBarColor.getColor());
 
         setTitleAlpha(ratio);
     }

@@ -26,4 +26,8 @@ public abstract class BaseViewHolder extends ViewHolder {
 
 	abstract int getViewLayoutID();
 
+    protected View findViewById(int id) {
+        return mView.findViewById(id);
+    }
+
 }

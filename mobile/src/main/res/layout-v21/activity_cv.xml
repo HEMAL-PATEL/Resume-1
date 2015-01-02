@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants"
-    android:fitsSystemWindows="true" >
+    android:fitsSystemWindows="false" >
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -147,6 +147,7 @@
             android:layout_width="@dimen/navigation_drawer_width"
             android:layout_height="match_parent"
             android:layout_gravity="start"
+            android:layout_marginTop="?actionBarSize"
             tools:layout="@layout/fragment_navigation_drawer" />
     </android.support.v4.widget.DrawerLayout>
 

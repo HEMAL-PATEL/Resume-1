@@ -18,11 +18,8 @@ public class ResumeContactFragment extends ResumeBaseFragment {
 	}
 
 	public static ResumeBaseFragment newInstance() {
-		ResumeBaseFragment fragment = new ResumeContactFragment();
-		return fragment;
+		return new ResumeContactFragment();
 	}
-
-	private ObservableScrollView mScrollView;
 
 	private OnScrollChangedListener mListener;
 

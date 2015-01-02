@@ -1,9 +1,12 @@
 package im.ene.lab.resume.fragments;
 
+import im.ene.lab.resume.widgets.ObservableScrollView;
 import im.ene.lab.resume.widgets.TabHolderScrollingContent;
 import android.support.v4.app.Fragment;
 
 public abstract class ResumeBaseFragment extends Fragment implements TabHolderScrollingContent {
+
+    protected ObservableScrollView mScrollView;
 
 	public ResumeBaseFragment() {
 		
