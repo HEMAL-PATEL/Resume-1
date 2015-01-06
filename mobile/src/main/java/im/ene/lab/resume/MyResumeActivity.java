@@ -1,17 +1,5 @@
 package im.ene.lab.resume;
 
-import com.crashlytics.android.Crashlytics;
-import im.ene.lab.resume.adapters.ResumePagerAdapter;
-import im.ene.lab.resume.fragments.NavigationDrawerFragment;
-import im.ene.lab.resume.fragments.NavigationDrawerFragment.NavigationDrawerCallbacks;
-import im.ene.lab.resume.utils.Utils;
-import im.ene.lab.resume.widgets.AlphaForegroundColorSpan;
-import im.ene.lab.resume.widgets.CircleTransform;
-import im.ene.lab.resume.widgets.KenBurnsView;
-import im.ene.lab.resume.widgets.ObservableHorizontalScrollView;
-import im.ene.lab.resume.widgets.ObservableScrollView.OnScrollChangedListener;
-import im.ene.lab.resume.widgets.ScrimInsetsFrameLayout;
-import im.ene.lab.resume.widgets.TabHolderScrollingContent;
 import android.annotation.SuppressLint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
@@ -36,10 +24,23 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.crashlytics.android.Crashlytics;
 import com.squareup.picasso.Picasso;
+
+import im.ene.lab.resume.adapters.ResumePagerAdapter;
+import im.ene.lab.resume.backend.myApi.MyApi;
+import im.ene.lab.resume.fragments.NavigationDrawerFragment;
+import im.ene.lab.resume.fragments.NavigationDrawerFragment.NavigationDrawerCallbacks;
+import im.ene.lab.resume.utils.Utils;
+import im.ene.lab.resume.widgets.AlphaForegroundColorSpan;
+import im.ene.lab.resume.widgets.CircleTransform;
+import im.ene.lab.resume.widgets.KenBurnsView;
+import im.ene.lab.resume.widgets.ObservableHorizontalScrollView;
+import im.ene.lab.resume.widgets.ObservableScrollView.OnScrollChangedListener;
+import im.ene.lab.resume.widgets.ScrimInsetsFrameLayout;
+import im.ene.lab.resume.widgets.TabHolderScrollingContent;
 import io.fabric.sdk.android.Fabric;
 
 @SuppressLint("NewApi")
@@ -201,10 +202,12 @@ public class MyResumeActivity extends ActionBarActivity implements
                     .getTabHolderScrollingContent();
             TabHolderScrollingContent content = fragmentContent
                     .valueAt(position);
-            content.adjustScroll(
-                    (int) (mHeaderHeight - mPagerTabs.getHeight() + ViewCompat
-                            .getTranslationY(mHeader)), mHeaderHeight
-                            - mPagerTabs.getHeight());
+
+            if (content != null)
+                content.adjustScroll(
+                        (int) (mHeaderHeight - mPagerTabs.getHeight() + ViewCompat
+                                .getTranslationY(mHeader)), mHeaderHeight
+                                - mPagerTabs.getHeight());
 
         }
 
